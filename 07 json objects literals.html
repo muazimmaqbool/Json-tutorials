@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>json objects literals</title>
+</head>
+<body>
+    <pre>
+        This is a JSON string: '{"name":"John", "age":30, "car":null}'
+
+        Inside the JSON string there is a JSON object literal: {"name":"John", "age":30, "car":null}
+
+        JSON object literals are surrounded by curly braces {}.
+        JSON object literals contains key/value pairs.
+        Keys and values are separated by a colon.
+        Keys must be strings, and values must be a valid JSON data type:
+                                                                        string
+                                                                        number
+                                                                        object
+                                                                        array
+                                                                        boolean
+                                                                        null
+                                                                        Each key/value pair is separated by a comma.
+        NOTE:
+        It is a common mistake to call a JSON object literal "a JSON object".
+        JSON cannot be an object. JSON is a string format.
+        The data is only JSON when it is in a string format. When it is converted to a JavaScript variable, it becomes a JavaScript object.
+    </pre>
+    <script>
+        //JavaScript Objects
+        //You can create a JavaScript object from a JSON object literal:
+        const obj={"name":"Muazim","age":23, "inSchool":null};
+        console.log(obj.name); //this is called object accessing using dot(.) 
+          //i.e accessing objects value using dot
+
+        //Normally, you create a JavaScript object by parsing a JSON string:
+        //Example
+        const myJSON = '{"name":"John", "age":30, "car":null}';
+        const myObj = JSON.parse(myJSON);
+        console.log(myObj.age) 
+        //we can also access object value using ["keyname"]
+        console.log(myObj["name"]); 
+        console.log(myObj["car"]);
+
+
+        //Looping an Object
+        //You can loop through object properties with a for-in loop:
+        const json2='{"item":"car","model":"2022","type":"4x4","topSpeed":"220-KMPH","brand":"BMW"}';
+        const obj2=JSON.parse(json2);
+        console.log(obj2)
+        let text="";
+        for(const i in obj2){
+            //text += i +", "; // this will only access key's not their value i.e : item,model,type,...etc
+            //In a for-in loop, use the bracket notation to access the property values i.e: car, 2022, 4x4,... etc
+            text += obj2[i] + ", "; //this will only access value of key's
+
+        }
+        console.log(text); 
+
+
+    </script>
+</body>
+</html>

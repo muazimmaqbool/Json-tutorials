@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Array Literals</title>
+</head>
+<body>
+    <pre>
+        This is a JSON string: '["Ford", "BMW", "Fiat"]'
+        
+        Inside the JSON string there is a JSON array literal: ["Ford", "BMW", "Fiat"]
+
+        Arrays in JSON are almost the same as arrays in JavaScript.
+        In JSON, array values must be of type string, number, object, array, boolean or null.
+
+
+    </pre>
+    <script>
+        //JavaScript Arrays : You can create a JavaScript array from a literal:
+        //Example
+        const myArray = ["Ford", "BMW", "Fiat"];
+        console.log(myArray);
+
+        //You can create a JavaScript array by parsing a JSON string:
+        const myJson='["Ford", "BMW", "Audi"]';
+        const arr1=JSON.parse(myJson);
+        console.log(arr1);
+        //Accessing Array Values
+        //ou access array values by index:
+        console.log(arr1[0]);
+        const c=arr1[2];
+        console.log(c);
+
+        //Important
+        //Arrays in Objects : Objects can contain arrays
+        const json2='{"name":"Muazim","age":23,"cars":["Audi","BMW","TATA"]}';
+        const obj=JSON.parse(json2);
+        //You access array values by index:
+        console.log(obj.cars[1]);
+        console.log(obj.cars[0])
+
+        //Looping Through an Array: You can access array values by using a for in loop or for loop:
+        let text="";
+        for(const i in obj.cars){
+            text +=obj.cars[i]+", ";
+        }
+        console.log(text);
+
+        //using for loop
+        let text1="";
+        for(let i=0; i<obj.cars.length; i++){
+            text1 += obj.cars[i]+", ";
+        }
+        console.log(text1)
+
+    </script>
+</body>
+</html>

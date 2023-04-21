@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <pre>
+        JSON.parse()
+
+        A common use of JSON is to exchange data to/from a web server.
+        When receiving data from a web server, the data is always a string.
+        Parse the data with JSON.parse(), and the data becomes a JavaScript object.
+    </pre>
+    <p id="demo"></p>
+    <script>
+      //Example - Parsing JSON
+      //Imagine we received this text from a web server:
+      const txt =
+        '{"item":"laptop","RAM":"8GB","HDD":"1TB","processor":"i3 7th gen"}'; //json data
+        //console.log(txt)
+      //Use the JavaScript function JSON.parse() to convert text/json file into a JavaScript object:
+      const obj = JSON.parse(txt);
+      // or write like this :
+      //const obj=JSON.parse('{"item":"laptop","RAM":"8GB","HDD":"1TB","processor":"i3 7th gen"}');
+
+      //Use the JavaScript object in your page:
+      console.log(obj.item, obj.RAM);
+      document.getElementById("demo").innerHTML =
+        obj.item + " " + obj.processor;
+
+      //Note:Make sure the text is in JSON format, or else you will get a syntax error.
+
+      //Array as JSON
+      //When using the JSON.parse() on a JSON derived from an array, the method will return a
+      //JavaScript array, instead of a JavaScript object.
+
+      const products = '["coffee","biscuits","juice","ice cream","chips"]'; //json array
+      //console.log(products); //displaying json array
+      const myarray = JSON.parse(products);
+      console.log("JSON array[2]:", myarray[2]); // o/p 2
+      //printing all elements of the myarray
+      for (i = 0; i < myarray.length; i++) {
+        console.log("at index: ", i, ": ", myarray[i]);
+      }
+    </script>
+  </body>
+</html>

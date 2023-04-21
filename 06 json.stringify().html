@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        JSON.stringify()
+
+        A common use of JSON is to exchange data to/from a web server.
+        When sending data to a web server, the data has to be a string.
+        Convert a JavaScript object into a string with JSON.stringify()
+
+        <p id="demo"></p>
+    </pre>
+    <script>
+        //Imagine we have this object in JavaScript:
+        const obj={item:"Note 10",id:"#6655",model:"2021"}; //javascript object
+        console.log("javascript object:",obj)
+        //Use the JavaScript function JSON.stringify() to convert it into a string
+        const myJSON=JSON.stringify(obj);
+        //The result will be a string following the JSON notation.
+        //myJSON is now a string, and ready to be sent to a server:
+        console.log("JSON text:",myJSON)
+        document.getElementById("demo").innerHTML=myJSON;
+
+        //Stringify a JavaScript Array
+        //It is also possible to stringify JavaScript arrays:
+        //Imagine we have this array in JavaScript:
+        const arr=["note 10","samsung A10","iphone 13pro"];
+        console.log("as array:",arr)
+        const myjson1=JSON.stringify(arr);
+        console.log("as Json string:",myjson1);
+
+
+        //learn more from here: https://www.w3schools.com/js/js_json_stringify.asp
+    </script>
+</body>
+</html>

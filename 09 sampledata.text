@@ -1,0 +1,9 @@
+{
+    "name":"muazim",
+    "age":23,
+    "cars":[
+        { "brand":"BMW", "model":"2015" },
+        { "brand":"Audi", "model":"2019" },
+        { "brand":"Ford", "model":"2023" }
+    ]
+}
